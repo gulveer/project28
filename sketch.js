@@ -39,7 +39,7 @@ function setup() {
 	
 	function draw() { 
 		background("white"); 
-		
+		Engine.update(engine);
 		tree1.display();
 	    ground.display();
 	    stone.display();
@@ -88,10 +88,10 @@ function setup() {
 		mangoBodyPosition = lmango.body.position;
 		stoneBodyPosition = lstone.body.position;
 
-		var distance = dist(stone.body.position.x, stone.body.position.y, mango1.body.position.x, mango1.body.position.y);
+		var distance = dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y);
 
 		if(distance <= lmango.r + lstone.r){
-     Matter.body.setStatic(lmango.body, false);
+     Matter.Body.setStatic(lmango.body, false);
 
 		}
 	
